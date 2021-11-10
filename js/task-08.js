@@ -4,7 +4,7 @@ const handleFormSubmit = (e) => {
   e.preventDefault();
   const { email, password } = formRef.elements;
   if (email.value === "" || password.value === "") {
-    alert("все поля должны быть заполнены");
+    return alert("все поля должны быть заполнены");
   }
   const inf = {
     email: email.value,
