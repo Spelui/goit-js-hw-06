@@ -1,10 +1,14 @@
-const iputRef = document.querySelector("#validation-input");
+const inputRef = document.querySelector("#validation-input");
 
-iputRef.addEventListener("blur", () => {
-  iputRef.classList.add("invalid");
+const addClass = (itm) => inputRef.classList.add(itm);
 
-  if (+iputRef.value.length === +iputRef.dataset.length) {
-    iputRef.classList.remove("invalid");
-    iputRef.classList.add("valid");
+const removeClass = (itm) => inputRef.classList.remove(itm);
+
+inputRef.addEventListener("blur", () => {
+  addClass("invalid");
+
+  if (+inputRef.value.length === +inputRef.dataset.length) {
+    removeClass("invalid");
+    addClass("valid");
   }
 });
